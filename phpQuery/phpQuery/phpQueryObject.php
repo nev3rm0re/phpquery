@@ -252,7 +252,7 @@ class phpQueryObject
 				continue;
 			if (!$input->is('[name]'))
 				continue;
-			if ($input->is('[type=checkbox]') && !$input->is('[checked]'))
+			if (($input->is('[type=checkbox]') || $input->is('[type=radio]')) && !$input->is('[checked]'))
 				continue;
 			// jquery diff
 			if ($submit && $input->is('[type=submit]')) {
@@ -1878,7 +1878,7 @@ class phpQueryObject
 	}
 	/**
 	 * Enter description here...
-	 * 
+	 *
 	 * @param $code
 	 * @return unknown_type
 	 */
@@ -1889,7 +1889,7 @@ class phpQueryObject
 	}
 	/**
 	 * Enter description here...
-	 * 
+	 *
 	 * @param $code
 	 * @return unknown_type
 	 */
@@ -2919,7 +2919,7 @@ class phpQueryObject
 	}
 	/**
 	 * Enter description here...
-	 * 
+	 *
 	 * @param <type> $key
 	 * @param <type> $value
 	 */
@@ -2936,7 +2936,7 @@ class phpQueryObject
 	}
 	/**
 	 * Enter description here...
-	 * 
+	 *
 	 * @param <type> $key
 	 */
 	public function removeData($key) {
