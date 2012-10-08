@@ -231,7 +231,13 @@ class phpQueryObject
 	 * @return string
 	 */
 	public function serialize() {
-		return phpQuery::param($this->serializeArray());
+		$serialized = $this->serializeArray();
+		$params = array();
+		foreach ($serialized as $field) {
+			$params[$field['name']] = $field['value'];
+		}
+
+		return phpQuery::param($params);
 	}
 	/**
 	 * Enter description here...
